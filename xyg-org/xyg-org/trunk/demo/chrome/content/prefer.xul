@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css" ?>
+
+<window 
+	id="prefer"
+	title="preference"	
+	persist="width height"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" 
+	onload="init();"
+    onunload="saveSettings();"
+	>
+	<script src="prefer.js"/>
+	
+<tabbox>
+  <tabs>
+      <tab label="Content"/>
+      <tab label="Language"/>
+  </tabs>
+  <tabpanels>
+       <tabpanel id="ContTab">
+           <checkbox label="Automatically Save the chat log."/>
+       </tabpanel>
+       <tabpanel id="LangTab">
+            <caption label="language"/>
+            <menulist label="Lang">
+                <menupopup>
+                    <menuitem label="Zh-CN"/>
+                    <menuitem label="En-US" selected="true"/>
+                 </menupopup>
+            </menulist>
+       </tabpanel>
+  </tabpanels>
+</tabbox>
+			
+	
+	
+</window>

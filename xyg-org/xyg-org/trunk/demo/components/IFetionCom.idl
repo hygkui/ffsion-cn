@@ -1,0 +1,26 @@
+#include "nsISupports.idl"
+
+[scriptable , function , uuid(e460e48a-0e95-11dd-bb96-00188b27b63e)]
+interface IJSCallback : nsISupports
+{
+    //javascript function call
+    boolean call( in string testStr);
+}
+;
+[scriptable, uuid(4fdf2881-f1a5-4832-a2ad-ff82db3e3141)]
+interface IFetionCom : nsISupports
+{
+  void SetCallback(in IJSCallback aCallback);
+  void TestCallback(in IJSCallback aCallback);
+  void Add(in long a, in long b , [retval] out long rtn );
+  void Login(in string FetionNo , in string FetionPswd , [retval] out long rtn );
+  void CreateSocket([retval] out long s_id );
+  void SendAMsg(in long c, in string from , in string to , in string msg , [retval] out long rtn );
+  void GetMsg(in long c , [retval] out string msg);
+  void CloseSocket(in long c , [retval] out long rtn);
+  void GetUserInfo(in long c , in string FetionNo , [retval] out string info); 
+  void TestProxyThread( [retval] out long flag); 
+}
+;
+
+

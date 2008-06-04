@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css" ?>
+
+<!--DOCTYPE window SYSTEM "chrome://qsos-xuled/locale/editor.dtd"-->
+<window 
+	id="chat"	
+	title = "chat window"
+	persist="width height"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" 
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	onload="init();"
+    onunload="saveChat();"   >
+	
+	<script src="chat.js"/>
+	
+<hbox flex="1">
+     <hbox flex = "5">
+            <vbox flex="1">
+                  <label value="chat-conversation;"/>
+                  <textbox id="conver" flex="1" readonly="true" style="overflow-y:scroll"/>
+                  <label value="chat-input;" control="input"/>
+                  <textbox id="input" multiline="true" rows="2"/>
+                 
+                  <textbox id="err" multiline="true" rows="2" hidden="true"/>
+
+                  <hbox>
+                         <spacer flex="1"/>
+                         <button label="chat-send" oncommand="sendMsg();"/>
+                         <spacer flex="1"/>
+                         <button label="chat-history" oncommand="openFile();"/>
+                  </hbox>
+                  <textbox id="hist" flex="1" readonly="true" style="overflow-y:scroll" hidden="true"/>
+
+            </vbox>
+     </hbox>
+         
+ </hbox>
+
+	
+</window>
+
+

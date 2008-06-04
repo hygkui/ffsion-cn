@@ -1,0 +1,46 @@
+include dirs.
+    |-- global.h
+    |-- md5.h
+    |-- network.h
+    |-- recv.h
+    |-- sipheader.h
+    |-- sipmsg.h
+    |-- sipstartln.h
+    |-- utils.h
+    `-- xygmsg.h
+
+global.h    : 全局变量
+md5.h       ：用于生成验证信息的md5加密内容。
+network.h   : class TCPConnection
+              createScoket
+              closeScoket
+              send and recv msg via the socket
+recv.h      : recv msg from the socket .
+sipheaer.h  : sip protocol headers.
+              class SIPHeaderLine
+              class SIPHeader
+sipmsg.h    : class SIPMessage
+              class SIPResponse
+              class SIPRequest
+sipstartln.h: class SIPStartLine
+              class RequetLine inherit from SIPStartLine
+              class ReponseLine inherit form SIPStartLine
+utils.h     : trim  remove all the leading and trailing space. 
+              credential : use md5 to encode the user account and pswd to login.
+xygmsg.h    : class msg_reg_1  inherit form SIPRequest
+              class msg_reg_rsp_1 inherit form SIPResponse
+              class msg_reg_2 inherit form SIPRequest
+              class msg_reg_rsp_2 inherit form SIPResponse
+              class msg_reg_3 inherit form SIPRequest
+              class msg_reg_rsp_3 inherit from SIPResponse
+              class msg_un_reg_1 inherit form SIPRequest
+              class msg_un_reg_rsp_1 inherit from SIPResponse
+
+the include reference btw this .h file.
+
+    recv.h   <-----------  network.h
+    xyg.h    <-----------  sipmsg.h   <------------   sipstartline.h
+                                      <------------   sipheader.h
+    global.h utils.h 是全局变量和 common fucntion。
+
+

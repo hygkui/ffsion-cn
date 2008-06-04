@@ -1,0 +1,38 @@
+import sys,os,string 
+
+platform = sys.platform
+
+nspr_path='/home/guohuan/tmp/xulrunner/1.9b3/xulrunner-sdk/include/nspr'
+nspr_lib ='/home/guohuan/tmp/xulrunner/1.9b3/xulrunner-sdk/lib'
+
+env = Environment (
+        CPPPATH = [nspr_path , './include'],
+        LIBPATH = [nspr_lib],
+        LIBS = ['nspr4',],
+        ENV = os.environ)
+
+if platform  == 'linux2':
+    env.AppendUnique(
+            CXXFLAGS = [
+            '-Wall',
+#            '-O2',
+            '-fshort-wchar',
+            ])
+
+parts=[]
+if platform == 'linux2':
+    parts.extend([ 'md5.cpp',
+            'recv.cpp',
+            'sipheader.cpp',
+            'sipstartln.cpp',
+            'xygreg.cpp',
+            'libxyg.cpp',
+            'network.cpp',
+            'sipmsg.cpp',
+            'utils.cpp',
+            'trans.cpp',
+            'xygsvc.cpp'])
+
+
+
+env.SharedLibrary('xyg' , parts)

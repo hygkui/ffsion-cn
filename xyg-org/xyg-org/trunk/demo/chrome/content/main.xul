@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://myapp/skin/" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://myapp/locale">
+<window 	
+	id="main-window"
+    onload="init();"
+    persist="width height"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<script src="main.js"/>
+	<toolbox flex="">
+	  <menubar id="sample-menubar">
+    		<menu id="buddies-menu" label="Buddies">
+     			 <menupopup id="budd-popup">
+       				<menuitem label="Show All friends"    oncommand="showAllFriends();"/>
+			        <menuitem label="Show online friends"  oncommand="showOnlineFriends();"  />
+				<menuseparator/>
+			        <menuitem label="Add a new friend" oncommand="addNewFriend();"   />
+		       		<menuseparator/>
+        			<menuitem label="Exit" oncommand="exit();"/>
+      			</menupopup>
+   		 </menu>
+    		 <menu id="setting-menu" label="Setting">
+      			<menupopup id="setting-popup">
+       				<menuitem label="preferencss"   oncommand="setPrefer();"/>
+		        </menupopup>
+		  </menu>
+		<menu id="help-munu" label="Help">
+			<menupopup id="help-popup">
+				<menuitem label="About" oncommand="about();"/>
+				<menuitem label="Help" oncommand="help();"/>
+			</menupopup>
+		</menu>
+	  </menubar>
+	</toolbox>
+
+    
+
+    <vbox flex="1">
+        <hbox>
+            <label id="myFetionno" value="my number:" />
+            <menulist label="status" editable="true">
+                 <menupopup>
+                     <menuitem label="online" />
+                     <menuitem label="offline"/>
+                     <menuitem label="busy"/>
+                 </menupopup>
+            </menulist>
+            <spacer flex="1"/>
+            <!--image id="img" src="chrome://myapp/skin/myface.png"//can't work/-->
+            <!-- style="list-style-image: url('chrome://myapp/skin/images/myface.png');" // can't work/-->
+            <image id="img" src="images/myface.png"/>
+        </hbox>
+
+       <groupbox  caption="&caption.friends;" flex="1">
+            <grid style="border:solid 2px;">
+                <rows>
+                    <row />
+                </rows>
+                
+                <columns>
+                    <column>
+                        <label value="me"/>
+                    </column>
+                    <spacer flex="1"/>
+                    <column>
+                        <button label="get info" oncommand="getUserInfo();"/>
+                    </column>
+                    <column>
+                        <button label="Chat" oncommand="openChat();"/>
+                    </column>                   
+
+                </columns>
+               
+            </grid>
+        </groupbox>
+
+    </vbox>
+    
+
+
+
+
+</window>

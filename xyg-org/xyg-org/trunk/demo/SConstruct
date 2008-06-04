@@ -1,0 +1,3 @@
+SConscript(['../src/SConscript'])
+SConscript(['components/SConscript'])
+

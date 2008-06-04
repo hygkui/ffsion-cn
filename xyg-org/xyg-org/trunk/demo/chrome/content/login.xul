@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://myapp/locale">
+<window 
+	id="login" 
+	title="XYG--" 
+	width="300" 
+	height="300" 
+    persist="width height"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	  	
+	<script src="login.js"/>
+	
+	<hbox flex="">
+		<caption label="欢迎使用XYG飞信通信软件"/> 
+		<spacer flex="1"/>
+		<label value="&label.help;"  pack="end"/>
+	</hbox>
+	<spacer flex="1"/>
+    <vbox >
+    <label id="lbl_tip" value="" />
+    </vbox>
+	<groupbox flex="1" caption="&caption.login;">
+		<grid flex="1">
+			<columns>
+				<column flex="1"/>
+				<column flex="2"/>
+			</columns>
+			
+			<rows>
+				<row>
+					<label value="Account"  control="user_account" />
+					<textbox id="user_account"  maxlength="10" persist="value" value="644508426"/>
+				</row>
+				<row>
+					<label value="Password" control="user_pswd"/>
+					<textbox id="user_pswd" type="password" value="01110407" />
+				</row>
+				
+		
+			</rows>
+		</grid>
+		<hbox >
+			<spacer flex="1"/>	
+            <button label="TestProxy" oncommand="testCallback();" />
+			<button label="Login" oncommand="login();"/>
+			<spacer flex="1"/>
+		</hbox>
+			
+	</groupbox>
+</window>
+

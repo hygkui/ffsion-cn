@@ -1,0 +1,8 @@
+#conversation {
+  padding: 5px;
+  background-color: white;
+  border-left: grey ridge;
+  border-top: grey ridge;
+  overflow: auto;
+}
+

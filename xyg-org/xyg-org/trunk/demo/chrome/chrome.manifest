@@ -1,0 +1,4 @@
+content myapp file:content/
+locale myapp en-US file:locale/en-US/
+locale myapp zh-CN file:locale/zh-CN/
+skin myapp file:skin/
